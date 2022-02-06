@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,Title } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MerkService } from './merk-service.service';
+import { MerkService } from './merk.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -24,6 +24,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { TopViewByBrandComponent } from './top-view-by-brand/top-view-by-brand.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TopViewByModelComponent } from './top-view-by-model/top-view-by-model.component';
+import { HandelsbenamingService } from './handelsbenaming.service';
 
 
 
@@ -31,7 +33,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   declarations: [
     AppComponent,
     TopViewByBrandComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TopViewByModelComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule
 
   ],
-  providers: [MerkService],
+  providers: [Title,MerkService,HandelsbenamingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

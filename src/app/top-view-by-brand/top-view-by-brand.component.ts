@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { MerkService, MerkSummary, MerkTotal } from '../merk-service.service';
+import { MerkService, MerkSummary, MerkTotal } from '../merk.service';
 
 @Component({
   selector: 'app-top-view-by-brand',
@@ -8,7 +8,7 @@ import { MerkService, MerkSummary, MerkTotal } from '../merk-service.service';
   styleUrls: ['./top-view-by-brand.component.css']
 })
 export class TopViewByBrandComponent implements OnInit {
-  limit:number=20;
+  limit:number=100;
   title = `Top ${this.limit} By Brand`;
   merkSummary!: Observable<MerkSummary>;
   // dataSource!:Observable<MerkTotal[]>;
