@@ -1,0 +1,35 @@
+<div *ngIf="merkSummary | async as summary"  fxLayout="column" fxFlexAlign="center">
+    <h1>Total: {{summary.total | number }}</h1>
+
+  <table mat-table [dataSource]="summary.merkTotal"  fxFill >
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef style="width:20px"> # </th>
+            <td mat-cell *matCellDef="let element; let i = index;">{{i+1}}</td>
+          </ng-container>
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="merk">
+      <th mat-header-cell *matHeaderCellDef > <strong>Brand</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.merk}}  </td>
+    </ng-container>
+  
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="count_merk"  >
+      <th mat-header-cell *matHeaderCellDef  style="width:25%"> <strong>Total.</strong> </th>
+      <td mat-cell *matCellDef="let element"  > {{element.count | number}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="percentage">
+      <th mat-header-cell *matHeaderCellDef style="width:18%"> <strong>(%)</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.percentage | percent : '1.1-2'}}  </td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>

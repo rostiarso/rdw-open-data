@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { TopViewByBrandComponent } from './top-view-by-brand/top-view-by-brand.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    component: TopViewByBrandComponent,
+    children: []
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: []
 })
 export class AppRoutingModule { }
