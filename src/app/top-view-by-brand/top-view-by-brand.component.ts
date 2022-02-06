@@ -8,7 +8,7 @@ import { MerkService, MerkSummary, MerkTotal } from '../merk.service';
   styleUrls: ['./top-view-by-brand.component.css']
 })
 export class TopViewByBrandComponent implements OnInit {
-  limit:number=100;
+  limit:number=50;
   title = `Top ${this.limit} By Brand`;
   merkSummary!: Observable<MerkSummary>;
   // dataSource!:Observable<MerkTotal[]>;
