@@ -4,9 +4,11 @@
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
-      <span>        <a mat-flat-button color="accent"
+      <span>   
+          
+    <a mat-flat-button color="accent"
         title="Netherlands RDW Vehicle Data"
-        href="/">
+        [routerLink]="''">
         Netherlands RDW Vehicle Data
     </a></span>
       <span class="menu-spacer"></span>
@@ -32,8 +34,8 @@
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
-      <mat-nav-list>
         <!---
+      <mat-nav-list>
         <a href="#" mat-list-item>
           <mat-icon>notifications</mat-icon>
           Notifications
@@ -49,10 +51,10 @@
           <mat-icon>lock</mat-icon>
           My Account
         </a>
-        -->
       </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>
+        -->
+      </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
       <div  fxLayout="row" fxLayoutAlign="center none">
         <div  fxFlex.gt-md="80" fxFlex="98" fxLayoutGap="2px">
           <router-outlet></router-outlet>
