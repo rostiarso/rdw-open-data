@@ -1,4 +1,4 @@
-<div *ngIf="merkSummary | async as summary"  fxLayout="column" fxFlexAlign="center">
+<div *ngIf="merkSummary | async as summary; else loading"  fxLayout="column" fxFlexAlign="center">
     <h1>Total: {{summary.total | number }}</h1>
 
   <table mat-table [dataSource]="summary.merkTotal"  fxFill >
@@ -6,8 +6,8 @@
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
           <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef style="width:20px"> # </th>
-            <td mat-cell *matCellDef="let element; let i = index;">{{i+1}}</td>
+            <th class="text-align-right" mat-header-cell *matHeaderCellDef style="width:20px"> # </th>
+            <td class="text-align-right" mat-cell *matCellDef="let element; let i = index;">{{i+1}}</td>
           </ng-container>
   
     <!-- Position Column -->
@@ -23,13 +23,13 @@
   
     <!-- Name Column -->
     <ng-container matColumnDef="count_merk"  >
-      <th mat-header-cell *matHeaderCellDef  style="width:25%"> <strong>Total.</strong> </th>
-      <td mat-cell *matCellDef="let element"  > {{element.count | number}} </td>
+      <th class="text-align-right" mat-header-cell *matHeaderCellDef  > <strong>Total.</strong> </th>
+      <td class="text-align-right" mat-cell *matCellDef="let element"  > {{element.count | number}} </td>
     </ng-container>
   
     <ng-container matColumnDef="percentage">
-      <th mat-header-cell *matHeaderCellDef style="width:18%"> <strong>(%)</strong> </th>
-      <td mat-cell *matCellDef="let element"> {{element.percentage | percent : '1.1-2'}}  </td>
+      <th class="text-align-right" mat-header-cell *matHeaderCellDef style="width:18%"> <strong>(%)</strong> </th>
+      <td class="text-align-right" mat-cell *matCellDef="let element"> {{element.percentage | percent : '1.1-2'}}  </td>
     </ng-container>
   
   
@@ -37,3 +37,10 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   </div>
+
+  <ng-template #loading>
+    <div><h2>Loading...</h2></div>    
+    <mat-progress-bar
+    mode="indeterminate">
+</mat-progress-bar>
+  </ng-template>
