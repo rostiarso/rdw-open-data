@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { TopViewByBrandComponent } from './top-view-by-brand/top-view-by-brand.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TopViewByModelComponent } from './top-view-by-model/top-view-by-model.component';
+import { TopViewByBrandModelComponent } from './top-view-by-brand-model/top-view-by-brand-model.component';
+import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.component';
 
 const routes: Routes = [
   {
@@ -10,8 +12,20 @@ const routes: Routes = [
     component: TopViewByBrandComponent,
   },
   {
-    path: 'brand/:id',
+    path: 'topbrand',
+    component: TopViewByBrandComponent,
+  },  
+  {
+    path: 'topmodel',
     component: TopViewByModelComponent,
+  },  
+  {
+    path: 'toptype',
+    component: TopViewByTypeComponent,
+  },  
+  {
+    path: 'brand/:id',
+    component: TopViewByBrandModelComponent,
   },  
   {
     path: '**',

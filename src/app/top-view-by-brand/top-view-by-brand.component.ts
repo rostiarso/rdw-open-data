@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { map, Observable } from 'rxjs';
 import { MerkService, MerkSummary, MerkTotal } from '../merk.service';
 
@@ -9,15 +10,15 @@ import { MerkService, MerkSummary, MerkTotal } from '../merk.service';
 })
 export class TopViewByBrandComponent implements OnInit {
   limit:number=50;
-  title = `Top ${this.limit} By Brand`;
   merkSummary!: Observable<MerkSummary>;
   // dataSource!:Observable<MerkTotal[]>;
 
 
   displayedColumns: string[] = ['position','merk', 'count_merk','percentage'];
-  constructor(private merkService: MerkService) { }
+  constructor(private merkService: MerkService,private titleService: Title) { }
   ngOnInit(): void {
     this.merkSummary=this.merkService.getTopNMerk(this.limit);
+    this.titleService.setTitle('View by Brand');
     // this.dataSource=this.merkSummary.pipe(map( x => {return x.merkTotal;}));
   }
 

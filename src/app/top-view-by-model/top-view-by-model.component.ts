@@ -12,33 +12,25 @@ import {  HandelsbenamingService,  HandelsbenamingSummary,  HandelsbenamingTotal
   styleUrls: ['./top-view-by-model.component.css']
 })
 export class TopViewByModelComponent implements OnInit,OnDestroy {
-  limit:number=10;
+  limit:number=50;
   merk!: string | null;
   handelsbenamingSummary!: Observable< HandelsbenamingSummary>;
   paramSub!: Subscription;
   // dataSource!:Observable< HandelsbenamingTotal[]>;
-  title = `Top ${this.limit} By Brand ${this.merk}`;
+  
 
 
-  displayedColumns: string[] = ['position','handelsbenaming', 'count_handelsbenaming','percentage'];
+  displayedColumns: string[] = ['position','handelsbenaming','merk','voertuigsoort', 'count','percentage'];
   constructor(private  HandelsbenamingService:  HandelsbenamingService, private activatedRoute:ActivatedRoute,private titleService: Title) { }
   ngOnDestroy(): void {
     if(this.paramSub)
       this.paramSub.unsubscribe();
   }
   ngOnInit(): void {
-    
 
-    this.paramSub=this.activatedRoute.paramMap.subscribe(params => { 
-      console.log(params);
-       this.merk = params.get('id'); 
-       if(this.merk)
-       {
-        this. handelsbenamingSummary=this. HandelsbenamingService.getTopHandelsbenaming(this.merk,this.limit);
-        this.titleService.setTitle(`${this.merk} Top Model`);
-       }
-       
-   });    
+        this. handelsbenamingSummary=this. HandelsbenamingService.getTopHandelsbenaming(this.limit);
+        this.titleService.setTitle('View by Model');
+   
     
     // this.dataSource=this. HandelsbenamingSummary.pipe(map( x => {return x. HandelsbenamingTotal;}));
   }

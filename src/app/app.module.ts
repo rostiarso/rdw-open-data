@@ -27,6 +27,8 @@ import { TopViewByBrandComponent } from './top-view-by-brand/top-view-by-brand.c
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TopViewByModelComponent } from './top-view-by-model/top-view-by-model.component';
 import { HandelsbenamingService } from './handelsbenaming.service';
+import { TopViewByBrandModelComponent } from './top-view-by-brand-model/top-view-by-brand-model.component';
+import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.component';
 
 
 
@@ -35,7 +37,9 @@ import { HandelsbenamingService } from './handelsbenaming.service';
     AppComponent,
     TopViewByBrandComponent,
     NotFoundComponent,
-    TopViewByModelComponent
+    TopViewByModelComponent,
+    TopViewByBrandModelComponent,
+    TopViewByTypeComponent
   ],
   imports: [
     BrowserModule,

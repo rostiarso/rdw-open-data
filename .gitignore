@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+.vsco
 
 # Node
 /node_modules
