@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TopViewByModelComponent } from './top-view-by-model/top-view-by-model.component';
 import { TopViewByBrandModelComponent } from './top-view-by-brand-model/top-view-by-brand-model.component';
 import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.component';
+import { TopViewByDatumComponent } from './top-view-by-datum/top-view-by-datum.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,11 @@ const routes: Routes = [
   {
     path: 'topbrand',
     component: TopViewByBrandComponent,
-  },  
+  }, 
+  {
+    path: 'datum',
+    component: TopViewByDatumComponent,
+  },     
   {
     path: 'topmodel',
     component: TopViewByModelComponent,

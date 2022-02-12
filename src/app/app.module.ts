@@ -30,6 +30,7 @@ import { HandelsbenamingService } from './handelsbenaming.service';
 import { TopViewByBrandModelComponent } from './top-view-by-brand-model/top-view-by-brand-model.component';
 import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.component';
 import { NgChartsModule } from 'ng2-charts';
+import { TopViewByDatumComponent } from './top-view-by-datum/top-view-by-datum.component';
 
 
 
@@ -41,6 +42,7 @@ import { NgChartsModule } from 'ng2-charts';
     TopViewByModelComponent,
     TopViewByBrandModelComponent,
     TopViewByTypeComponent,
+    TopViewByDatumComponent,
     
   ],
   imports: [

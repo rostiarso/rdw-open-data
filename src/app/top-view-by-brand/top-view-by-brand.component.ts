@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { map, Observable, tap } from 'rxjs';
-import { MerkService, MerkSummary, MerkTotal } from '../merk.service';
+import {  Observable, tap } from 'rxjs';
+import { MerkService, MerkSummary } from '../merk.service';
 
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartData,  ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';

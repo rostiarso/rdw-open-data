@@ -18,9 +18,14 @@
         <a mat-button title="View by Model" [routerLink]="'/topmodel'">
           <mat-icon>garage</mat-icon>
           View by Model
-        </a> <a mat-button title="View by Ty[e" [routerLink]="'/toptype'">
+        </a> 
+        <a mat-button title="View by Type" [routerLink]="'/toptype'">
           <mat-icon>text_fields</mat-icon>
           View by Type
+        </a>
+        <a mat-button title="Timeline" [routerLink]="'/datum'">
+          <mat-icon>timeline</mat-icon>
+          Timeline
         </a>
 
       </div>
@@ -38,10 +43,17 @@
         <a mat-list-item title="View by Model" [routerLink]="'/topmodel'" (click)="sidenav.close()">
           <mat-icon>garage</mat-icon>
           View by Model
-        </a> <a mat-list-item title="View by Ty[e" [routerLink]="'/toptype'" (click)="sidenav.close()">
+        </a> 
+        <a mat-list-item title="View by Type" [routerLink]="'/toptype'" (click)="sidenav.close()">
           <mat-icon>text_fields</mat-icon>
           View by Type
         </a>
+
+        <a mat-list-item title="Timeline" [routerLink]="'/datum'" (click)="sidenav.close()">
+          <mat-icon>timeline</mat-icon>
+          Timeline
+        </a>
+
       </mat-nav-list>
 
     </mat-sidenav>
