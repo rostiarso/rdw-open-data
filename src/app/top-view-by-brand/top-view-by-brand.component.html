@@ -36,7 +36,21 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  &nbsp;
+  <div  >
+    
+    <div  style="display: block" >
+      <h1>Top {{chartLimit}} Distribution</h1>
+      <canvas baseChart
+        [data]="chartData" 
+        [options]="chartOptions"
+        [plugins]="chartPlugins"
+        [type]="chartType">
+      </canvas>
+    </div>
   </div>
+  </div>
+
 
   <ng-template #loading>
     <div><h2>Loading...</h2></div>    
@@ -44,3 +58,8 @@
     mode="indeterminate">
 </mat-progress-bar>
   </ng-template>
+
+
+
+  
+  

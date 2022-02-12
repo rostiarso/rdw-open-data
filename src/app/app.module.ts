@@ -29,6 +29,7 @@ import { TopViewByModelComponent } from './top-view-by-model/top-view-by-model.c
 import { HandelsbenamingService } from './handelsbenaming.service';
 import { TopViewByBrandModelComponent } from './top-view-by-brand-model/top-view-by-brand-model.component';
 import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -39,7 +40,8 @@ import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.comp
     NotFoundComponent,
     TopViewByModelComponent,
     TopViewByBrandModelComponent,
-    TopViewByTypeComponent
+    TopViewByTypeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { TopViewByTypeComponent } from './top-view-by-type/top-view-by-type.comp
     MatToolbarModule,
     MatProgressBarModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+      NgChartsModule
 
   ],
   providers: [Title,MerkService,HandelsbenamingService],
