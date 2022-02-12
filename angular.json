@@ -102,7 +102,12 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options":{
+            "baseHref": "https://rostiarso.github.io/rdw-open-data/",
+            "repo":"https://github.com/rostiarso/rdw-open-data.git"
+          }
+
         }
       }
     }
