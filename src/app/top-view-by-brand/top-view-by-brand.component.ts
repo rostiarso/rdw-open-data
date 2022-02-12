@@ -50,7 +50,7 @@ export class TopViewByBrandComponent implements OnInit {
   constructor(private merkService: MerkService, private titleService: Title) { }
   ngOnInit(): void {
     this.merkSummary = this.merkService.getTopNMerk(this.limit).pipe(tap(m => { 
-      console.table(m) ;
+     
       this.chartData=
       {
         labels: m.merkTotal.map(a => a.merk).slice(0,this.chartLimit),
@@ -61,7 +61,7 @@ export class TopViewByBrandComponent implements OnInit {
 
     }));
     this.titleService.setTitle('View by Brand');
-    // this.dataSource=this.merkSummary.pipe(map( x => {return x.merkTotal;}));
+    
   }
 
 

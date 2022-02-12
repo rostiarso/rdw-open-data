@@ -4,14 +4,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, mergeMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { BasicService } from './basic.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HandelsbenamingService {
-  queryUrl = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json';
-  constructor(private http: HttpClient) { }
-
+export class HandelsbenamingService extends BasicService {
 
 
   getTopHandelsbenamingByMerk(merk: string, limit: number): Observable<HandelsbenamingByMerkSummary> {
@@ -42,17 +40,6 @@ export class HandelsbenamingService {
   }
 
 
-  getTotalRegistered(): Observable<number> {
-    return this.http.get<Total[]>(`${this.queryUrl}?$query=select count(*)`)
-      .pipe(
-        map(response => {
-          if (response != null && response.length == 1) {
-            return <number>response[0]["count"];
-          }
-          return -1;
-        })
-      );
-  }
 
   getTotalRegisteredByMerk(merk: string): Observable<number> {
     return this.http.get<Total[]>(`${this.queryUrl}?$query=select count(*) where  merk=\"${merk}\"`)
@@ -93,7 +80,8 @@ export interface HandelsbenamingTotal {
   percentage: number;
 }
 
-export interface Total {
-
-  count: number;
+export interface Total
+{
+  
+  count:number;
 }
